@@ -1,7 +1,15 @@
-const express = require("express");
-const app = express();
+const express = require('express')
+const app = express()
 const pool = require("./db")
 
-app.listen(3000, () => {
-    console.log("server is listening on port 3000")
-})
+app.use(express.json())
+
+const port = 3000;
+
+app.get("/", ()=>{
+    console.log('hms');
+});
+
+app.listen(port, () =>{
+    console.log(`app listening on port ${port}`)
+});
